@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <title>Inicio - Gestión de Tareas</title>
+</head>
+<body>
+    <header>
+        <h1>Aplicación de Gestión de Tareas</h1>
+    </header>
+    <div class="container">
+        <% if (typeof nombre_usuario !== 'undefined') { %>
+            <p>Hola, <%= nombre_usuario %> | <a href="/auth/logout">Cerrar Sesión</a></p>
+        <% } else { %>
+            <p><a href="/auth/login">Iniciar Sesión</a></p>
+        <% } %>
+        <nav>
+            <ul>
+                <li><a style="color: #007bff !important" href="/tareas">Ver Tareas</a></li>
+                <li><a style="color: #007bff !important" href="/informes">Ver Informes</a></li>
+            </ul>
+        </nav>
+    </div>
+    <footer>
+        <p>&copy; 2024 Gestión de Tareas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

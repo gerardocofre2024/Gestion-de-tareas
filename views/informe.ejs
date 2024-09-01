@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <title>Informes de Progreso</title>
+</head>
+<body>
+    <h1>Informes de Progreso</h1>
+    <ul>
+        <% informes.forEach(informe => { %>
+            <li>
+                <strong><%= informe.nombre_proyecto %></strong> - Progreso: <%= informe.progreso %>%
+            </li>
+        <% }) %>
+    </ul>
+    <h2>Generar Informe</h2>
+    <form action="/informes/generar" method="POST">
+        <input type="text" name="nombre_proyecto" placeholder="Nombre del proyecto" required>
+        <input type="number" name="progreso" placeholder="Progreso (%)" required>
+        <button type="submit">Generar Informe</button>
+    </form>
+</body>
+</html>
